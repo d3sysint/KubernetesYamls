@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-log4j
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: log4j
+  template:
+    metadata:
+      labels:
+        app: log4j
+    spec:
+      containers:
+      - name: log4j
+        image: public.ecr.aws/w3u2f9x5/log4j
